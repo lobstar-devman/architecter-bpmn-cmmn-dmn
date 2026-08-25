@@ -1,0 +1,13 @@
+# 9. Architecture Decisions
+
+This section indexes the full decision log. See
+[Decisions (ADRs)](../decisions/index.md) for the complete, dated list.
+
+Each significant decision from the Solution Strategy and Building Block
+View is recorded as an ADR and linked from the relevant section above.
+
+Recorded so far:
+
+- [ADR-001: Ship as a drop-in Laravel Model](../decisions/adr-001-drop-in-laravel-model.md)
+- [ADR-002: Custom interpreter over embedding an existing engine](../decisions/adr-002-custom-interpreter.md)
+- [ADR-003: Event sourcing for state transitions and revisions](../decisions/adr-003-event-sourcing.md)

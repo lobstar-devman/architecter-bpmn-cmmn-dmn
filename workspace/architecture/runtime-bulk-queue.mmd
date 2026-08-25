@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant HostApp as Consuming Laravel App
+    participant QD as Queue Dispatcher
+    participant Queue as Laravel Queue
+    participant Worker as Queue Worker
+    participant RM as Revision Manager
+
+    HostApp->>QD: transitionBulk(entities, event)
+    QD->>QD: group by event and model revision, split into fixed-size batches
+    QD->>Queue: dispatch(BatchTransitionJob) x M
+    Queue-->>Worker: pop job (one batch)
+    loop each entity in batch
+        Worker->>RM: transition(entity, event)
+        RM-->>Worker: new state
+    end
+    Worker-->>Queue: job complete

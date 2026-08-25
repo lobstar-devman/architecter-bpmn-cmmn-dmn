@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant HostApp as Consuming Laravel App
+    participant RM as Revision Manager
+    participant MR as Model Registry
+    participant ES as Event Store
+
+    HostApp->>RM: rollback(entity, targetRevision)
+    RM->>MR: resolve targetRevision definition
+    MR-->>RM: prior model definition
+    RM->>ES: read event log for entity
+    ES-->>RM: event history
+    RM->>RM: recompute state against prior revision
+    RM->>ES: append RolledBackEvent
+    RM-->>HostApp: restored state

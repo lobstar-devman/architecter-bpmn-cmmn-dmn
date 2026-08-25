@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant HostApp as Consuming Laravel App
+    participant RM as Revision Manager
+    participant MR as Model Registry
+    participant BI as BPMN Interpreter
+    participant ES as Event Store
+
+    HostApp->>RM: transition(entity, event)
+    RM->>MR: resolve current model revision
+    MR-->>RM: BPMN model definition
+    RM->>BI: drive(entity, model, event)
+    BI-->>RM: new state
+    RM->>ES: append TransitionEvent
+    ES-->>RM: ack
+    RM-->>HostApp: new state

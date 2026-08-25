@@ -1,0 +1,42 @@
+erDiagram
+    MODEL_DEFINITION ||--o{ MODEL_REVISION : has
+    MODEL_REVISION ||--o{ INSTANCE : drives
+    INSTANCE ||--o{ TRANSITION_EVENT : records
+    MODEL_REVISION ||--o{ DECISION_LOG : "evaluated as"
+    INSTANCE |o--o{ DECISION_LOG : references
+
+    MODEL_DEFINITION {
+        uuid id PK
+        string standard "bpmn | cmmn | dmn"
+        string key
+        string name
+    }
+    MODEL_REVISION {
+        uuid id PK
+        uuid model_definition_id FK
+        int revision_number
+        text xml
+        timestamp created_at
+    }
+    INSTANCE {
+        uuid id PK
+        uuid model_revision_id FK
+        string type "process | case"
+        string current_state
+        timestamp created_at
+    }
+    TRANSITION_EVENT {
+        uuid id PK
+        uuid instance_id FK
+        string event_type
+        jsonb payload
+        timestamp occurred_at
+    }
+    DECISION_LOG {
+        uuid id PK
+        uuid model_revision_id FK
+        uuid instance_id FK "nullable, DMN evaluation may be standalone"
+        jsonb inputs
+        jsonb outputs
+        timestamp evaluated_at
+    }

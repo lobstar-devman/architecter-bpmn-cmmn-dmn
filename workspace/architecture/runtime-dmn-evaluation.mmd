@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant HostApp as Consuming Laravel App
+    participant DE as DMN Evaluator
+    participant MR as Model Registry
+    participant DP as DMN Parser
+
+    HostApp->>DE: evaluate(decisionKey, inputData)
+    DE->>MR: resolve DMN model
+    MR->>DP: parse DMN XML (if not cached)
+    DP-->>MR: parsed decision model
+    MR-->>DE: parsed decision model
+    DE-->>HostApp: decision result
