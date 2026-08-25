@@ -1,0 +1,69 @@
+name: bpm-engine
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: bpm-engine-postgres
+    environment:
+      POSTGRES_DB: bpm_engine
+      POSTGRES_USER: bpm_engine
+      POSTGRES_PASSWORD: bpm_engine
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  # Develops/tests the BPM Engine package itself via Orchestra Testbench.
+  # Mounts the WHOLE project root (not just ./package) so the arc42 docs,
+  # Structurizr DSL, and domain model are readable from inside the
+  # container at /workspace/{docs,architecture,data-model} — see
+  # package/README.md for the code/docs traceability convention, and
+  # ADR-004 for why this is a separate container from the docs-toolkit
+  # image (which lives outside this project, one directory up).
+  package:
+    build:
+      context: .
+      dockerfile: package/Dockerfile
+    container_name: bpm-engine-package
+    working_dir: /workspace/package
+    volumes:
+      - type: bind
+        source: .
+        target: /workspace
+    depends_on:
+      - postgres
+    # Idle by default — used via `docker compose run --rm package <command>`,
+    # same pattern as the docs-toolkit container. See package/README.md.
+    command: ["tail", "-f", "/dev/null"]
+
+  # A real, generated Laravel app that installs the package as an actual
+  # Composer dependency (via a path repository) — proves the drop-in
+  # Laravel Model story end-to-end. Empty until bootstrapped, see
+  # demo-app/README.md.
+  demo-app:
+    build:
+      context: ./demo-app
+    container_name: bpm-engine-demo-app
+    working_dir: /app
+    volumes:
+      - ./demo-app:/app
+      - ./package:/package
+    ports:
+      - "8001:8001"
+    depends_on:
+      - postgres
+
+  demo-app-worker:
+    build:
+      context: ./demo-app
+    container_name: bpm-engine-demo-app-worker
+    working_dir: /app
+    volumes:
+      - ./demo-app:/app
+      - ./package:/package
+    command: ["php", "artisan", "queue:work"]
+    depends_on:
+      - postgres
+
+volumes:
+  postgres-data:

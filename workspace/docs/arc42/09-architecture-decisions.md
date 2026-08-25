@@ -11,3 +11,4 @@ Recorded so far:
 - [ADR-001: Ship as a drop-in Laravel Model](../decisions/adr-001-drop-in-laravel-model.md)
 - [ADR-002: Custom interpreter over embedding an existing engine](../decisions/adr-002-custom-interpreter.md)
 - [ADR-003: Event sourcing for state transitions and revisions](../decisions/adr-003-event-sourcing.md)
+- [ADR-004: Separate PHP/Laravel container from the docs-toolkit container](../decisions/adr-004-separate-php-container.md)
