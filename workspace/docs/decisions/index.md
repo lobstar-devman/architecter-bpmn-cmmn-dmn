@@ -15,6 +15,7 @@ diagrammable source of truth).
 | [ADR-002](adr-002-custom-interpreter.md) | Custom interpreter over embedding an existing engine | accepted | 2026-08-25 |
 | [ADR-003](adr-003-event-sourcing.md) | Event sourcing for state transitions and revisions | accepted | 2026-08-25 |
 | [ADR-004](adr-004-separate-php-container.md) | Separate PHP/Laravel container from the docs-toolkit container | accepted | 2026-08-25 |
+| [ADR-005](adr-005-role-context-not-enforced.md) | Role/lane data is exposed via an event, not enforced | accepted | 2026-08-25 |
 
 ## Template
 

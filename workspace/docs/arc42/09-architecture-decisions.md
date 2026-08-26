@@ -12,3 +12,4 @@ Recorded so far:
 - [ADR-002: Custom interpreter over embedding an existing engine](../decisions/adr-002-custom-interpreter.md)
 - [ADR-003: Event sourcing for state transitions and revisions](../decisions/adr-003-event-sourcing.md)
 - [ADR-004: Separate PHP/Laravel container from the docs-toolkit container](../decisions/adr-004-separate-php-container.md)
+- [ADR-005: Role/lane data is exposed via an event, not enforced](../decisions/adr-005-role-context-not-enforced.md)

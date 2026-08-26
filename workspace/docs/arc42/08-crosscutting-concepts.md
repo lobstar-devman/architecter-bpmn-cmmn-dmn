@@ -26,9 +26,20 @@ _Generated from DMN decision tables via bpmn.io tooling._
 
 ## Security, Persistence, and other cross-cutting concerns
 
-Not yet defined — no implementation exists yet. Revisit once the Core
-module (Model Registry, Revision Manager, Event Store) is actually being
-built.
+**Authorization:** BPMN Pools/Lanes and CMMN Case Roles model
+organizational accountability (which role/department is responsible for
+an activity), not technical access control — neither standard defines
+IAM semantics. Per
+[ADR-005](../decisions/adr-005-role-context-not-enforced.md), the engine
+exposes this role/lane context via a `TransitionRoleContext` event
+dispatched immediately after each transition is durably recorded, but
+never enforces access control itself; real authorization is entirely the
+host application's responsibility, exercised before calling
+`RevisionManager::transition()`/`rollback()`.
+
+Persistence and other concerns are not yet defined — no implementation
+exists yet beyond the above. Revisit once the Core module (Model
+Registry, Revision Manager, Event Store) is actually being built.
 
 _Free text, hand-authored, linking out to the relevant source-of-truth
 diagrams above._
