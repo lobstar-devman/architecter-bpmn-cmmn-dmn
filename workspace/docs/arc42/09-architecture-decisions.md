@@ -14,3 +14,4 @@ Recorded so far:
 - [ADR-004: Separate PHP/Laravel container from the docs-toolkit container](../decisions/adr-004-separate-php-container.md)
 - [ADR-005: Role/lane data is exposed via an event, not enforced](../decisions/adr-005-role-context-not-enforced.md)
 - [ADR-006: No built-in MCP server — AI-agent access goes through the business domain](../decisions/adr-006-no-builtin-mcp-server.md)
+- [ADR-007: Implementation is self-contained and relocatable; docs are read via the served site](../decisions/adr-007-implementation-self-contained.md)

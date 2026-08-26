@@ -15,8 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# The whole project (not just this directory) is bind-mounted at
-# /workspace at `docker compose` runtime — see ../docker-compose.yml —
-# so docs/, architecture/, and data-model/ are readable from inside this
-# container. See README.md for why.
-WORKDIR /workspace/implementation/package
+# This directory is bind-mounted at /app at `docker compose` runtime —
+# see ../docker-compose.yml. Self-contained: no access to anything
+# outside this directory. See README.md and ADR-007 for why.
+WORKDIR /app

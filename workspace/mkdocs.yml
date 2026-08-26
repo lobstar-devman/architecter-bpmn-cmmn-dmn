@@ -79,3 +79,4 @@ nav:
       - "ADR-004: Separate PHP Container": decisions/adr-004-separate-php-container.md
       - "ADR-005: Role Context Not Enforced": decisions/adr-005-role-context-not-enforced.md
       - "ADR-006: No Built-in MCP Server": decisions/adr-006-no-builtin-mcp-server.md
+      - "ADR-007: Implementation Self-Contained": decisions/adr-007-implementation-self-contained.md

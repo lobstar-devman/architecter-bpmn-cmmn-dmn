@@ -14,21 +14,19 @@ services:
       - postgres-data:/var/lib/postgresql/data
 
   # Develops/tests the BPM Engine package itself via Orchestra Testbench.
-  # Mounts the WHOLE project root (not just ./package) so the arc42 docs,
-  # Structurizr DSL, and domain model are readable from inside the
-  # container at /workspace/{docs,architecture,data-model} — see
-  # package/README.md for the code/docs traceability convention, and
-  # ADR-004 for why this is a separate container from the docs-toolkit
-  # image (which lives outside this project, one directory up).
+  # Self-contained: mounts only ./package, no filesystem access to the
+  # docs repo. Design docs are read the normal way — in an editor, or via
+  # the docs-toolkit's served site (mkdocs serve, localhost:8000) — not
+  # piped into this container. See package/README.md for the code/docs
+  # traceability convention, ADR-004 for why this is a separate container
+  # from the docs-toolkit image, and ADR-007 for why it's self-contained.
   package:
     build:
       context: ./package
     container_name: bpm-engine-package
-    working_dir: /workspace/implementation/package
+    working_dir: /app
     volumes:
-      - type: bind
-        source: ..
-        target: /workspace
+      - ./package:/app
     depends_on:
       - postgres
     # Idle by default — used via `docker compose run --rm package <command>`,

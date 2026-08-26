@@ -26,12 +26,13 @@ building one combined container.
 - Two independent tool chains (docs rendering vs. PHP/Laravel runtime)
   stay cleanly separated — neither image carries dependencies it doesn't
   need.
-- The `package` container's whole-project bind mount gives implementers
+- ~~The `package` container's whole-project bind mount gives implementers
   direct access to the arc42 docs, Structurizr DSL, and domain model
-  while writing code that has to match them (see the traceability
-  convention documented in `implementation/package/README.md`, outside
-  this docs site) — this was a deliberate part of the split, not an
-  afterthought.
+  while writing code that has to match them~~ — **superseded by
+  [ADR-007](adr-007-implementation-self-contained.md):** the `package`
+  container no longer bind-mounts the whole project; docs are read via
+  the docs-toolkit's served site instead, and `implementation/` is kept
+  self-contained and relocatable to its own repository.
 - Two `docker-compose.yml` files and two sets of `Dockerfile`s to
   maintain instead of one; contributors need to know which one is for
   docs and which is for implementation.

@@ -2,10 +2,10 @@
 
 A minimal, real Laravel application used to exercise the BPM Engine
 package end-to-end (not just through Orchestra Testbench), matching the
-"Consuming Laravel Application" in
-[Context & Scope](../../docs/arc42/03-context-and-scope.md) and the
-web/app-server + queue-worker roles in the
-[Deployment View](../../docs/arc42/07-deployment-view.md).
+"Consuming Laravel Application" in Context & Scope (arc42 Section 3) and
+the web/app-server + queue-worker roles in the Deployment View
+(Section 7) — see the docs-toolkit's served site
+(`http://localhost:8000`) for both.
 
 This directory is intentionally empty except for this README and the
 `Dockerfile` — a full Laravel skeleton is fetched via Composer, not
@@ -40,4 +40,4 @@ docker compose up demo-app demo-app-worker postgres
 
 `demo-app` serves the app (`php artisan serve`); `demo-app-worker` runs
 `php artisan queue:work`, consuming batched transition jobs dispatched by
-`QueueDispatcher` (see [Runtime View](../../docs/arc42/06-runtime-view.md)).
+`QueueDispatcher` (see Runtime View, arc42 Section 6).

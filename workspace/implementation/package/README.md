@@ -1,23 +1,32 @@
 # BPM Engine (package)
 
-The Composer package implementing the BPM Engine design documented in
-[../../docs/arc42](../../docs/arc42/01-introduction-and-goals.md).
+The Composer package implementing the BPM Engine design (see the arc42
+documentation site, below).
+
+This directory is self-contained and relocatable — nothing in it (no
+path, mount, or link) points outside itself, so it can be copied out
+into its own git repository at any time (`cp -r implementation/
+~/new-repo && cd ~/new-repo && git init`) with nothing to fix up. See
+ADR-007 ("Implementation is self-contained and relocatable") on the docs
+site for the full reasoning.
 
 ## Code ↔ docs traceability
 
-The [Building Block View](../../docs/arc42/05-building-block-view.md),
-[Runtime View](../../docs/arc42/06-runtime-view.md), and
-[domain model](../../docs/arc42/08-crosscutting-concepts.md) are the
-design source of truth (per `architecting-agent.md`'s living-system
-principle) that this code implements. If implementing something reveals
-the design needs to change — a method signature, a new component, a
-schema tweak — update the relevant doc/source-of-truth file first (and
-re-run `../../scripts/generate-docs.sh`), then adjust the code to match.
-Don't let the two silently drift apart.
+The Building Block View (arc42 Section 5), Runtime View (Section 6), and
+domain model (Section 8) are the design source of truth (per
+`architecting-agent.md`'s living-system principle) that this code
+implements. If implementing something reveals the design needs to
+change — a method signature, a new component, a schema tweak — update
+the relevant doc/source-of-truth file first, in the docs repo, then
+adjust this code to match. Don't let the two silently drift apart.
 
-Inside the `package` container the whole project is mounted at
-`/workspace`, so these docs are readable from wherever you're working:
-`/workspace/docs`, `/workspace/architecture`, `/workspace/data-model`.
+Read the docs the normal way: in your editor, or via the docs-toolkit's
+served site (`docker compose up` in the docs repo, then
+`http://localhost:8000`) — not from inside this container. This
+container has no bind-mount into the docs repo and needs none: both
+Structurizr and Mermaid render to SVG, so every diagram's labels and
+relationship text remain real, searchable text on the served pages, not
+flattened into an image. See ADR-007 for the full reasoning.
 
 ## Status
 
@@ -37,5 +46,5 @@ docker compose run --rm package composer install
 docker compose run --rm package vendor/bin/pest
 docker compose run --rm package vendor/bin/pint --test
 docker compose run --rm package vendor/bin/phpstan analyse
-docker compose run --rm package bash   # ad hoc shell, with /workspace/docs etc. readable
+docker compose run --rm package bash   # ad hoc shell
 ```
