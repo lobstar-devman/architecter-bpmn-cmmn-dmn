@@ -16,6 +16,7 @@ diagrammable source of truth).
 | [ADR-003](adr-003-event-sourcing.md) | Event sourcing for state transitions and revisions | accepted | 2026-08-25 |
 | [ADR-004](adr-004-separate-php-container.md) | Separate PHP/Laravel container from the docs-toolkit container | accepted | 2026-08-25 |
 | [ADR-005](adr-005-role-context-not-enforced.md) | Role/lane data is exposed via an event, not enforced | accepted | 2026-08-25 |
+| [ADR-006](adr-006-no-builtin-mcp-server.md) | No built-in MCP server — AI-agent access goes through the business domain | accepted | 2026-08-25 |
 
 ## Template
 

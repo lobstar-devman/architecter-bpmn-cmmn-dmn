@@ -32,6 +32,11 @@ the network:
   state transition) that the host application can listen to.
 - **External BPMN/CMMN/DMN XML files** — model definitions authored
   externally are loaded as input.
+- **No MCP server (by design)** — the engine exposes no MCP (Model
+  Context Protocol) server or other AI-agent-facing interface. Per
+  [ADR-006](../decisions/adr-006-no-builtin-mcp-server.md), AI-agent
+  access must go through the host application's own domain-specific
+  interface, not the engine's generic transition primitives directly.
 
 _Interfaces to neighboring systems — generated from OpenAPI specs and/or
 Structurizr DSL relationships._
