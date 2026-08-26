@@ -16,8 +16,10 @@ CLI, bpmn-to-image, Redoc) and has no PHP runtime at all.
 
 Run the PHP/Laravel implementation (the `package` Testbench harness and
 the `demo-app` host application) in their own containers, defined in a
-separate `docker-compose.yml` at the project root, rather than adding PHP
-to the docs-toolkit image or building one combined container.
+separate `docker-compose.yml` under `implementation/` (grouping the
+package, the demo host app, and their compose file together, apart from
+the docs sources), rather than adding PHP to the docs-toolkit image or
+building one combined container.
 
 ## Consequences
 
@@ -27,8 +29,9 @@ to the docs-toolkit image or building one combined container.
 - The `package` container's whole-project bind mount gives implementers
   direct access to the arc42 docs, Structurizr DSL, and domain model
   while writing code that has to match them (see the traceability
-  convention documented in `package/README.md`, outside this docs site)
-  — this was a deliberate part of the split, not an afterthought.
+  convention documented in `implementation/package/README.md`, outside
+  this docs site) — this was a deliberate part of the split, not an
+  afterthought.
 - Two `docker-compose.yml` files and two sets of `Dockerfile`s to
   maintain instead of one; contributors need to know which one is for
   docs and which is for implementation.

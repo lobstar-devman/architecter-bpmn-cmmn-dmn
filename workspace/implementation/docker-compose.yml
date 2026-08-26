@@ -22,13 +22,12 @@ services:
   # image (which lives outside this project, one directory up).
   package:
     build:
-      context: .
-      dockerfile: package/Dockerfile
+      context: ./package
     container_name: bpm-engine-package
-    working_dir: /workspace/package
+    working_dir: /workspace/implementation/package
     volumes:
       - type: bind
-        source: .
+        source: ..
         target: /workspace
     depends_on:
       - postgres

@@ -19,4 +19,4 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 # /workspace at `docker compose` runtime — see ../docker-compose.yml —
 # so docs/, architecture/, and data-model/ are readable from inside this
 # container. See README.md for why.
-WORKDIR /workspace/package
+WORKDIR /workspace/implementation/package
