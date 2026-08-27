@@ -10,6 +10,10 @@ into its own git repository at any time (`cp -r implementation/
 ADR-007 ("Implementation is self-contained and relocatable") on the docs
 site for the full reasoning.
 
+**Continuing the implementation?** See
+[AGENT_INSTRUCTIONS.md](AGENT_INSTRUCTIONS.md) for what to read first
+and the current milestone.
+
 ## Code ↔ docs traceability
 
 The Building Block View (arc42 Section 5), Runtime View (Section 6), and

@@ -7,9 +7,13 @@ the web/app-server + queue-worker roles in the Deployment View
 (Section 7) — see the docs-toolkit's served site
 (`http://localhost:8000`) for both.
 
-This directory is intentionally empty except for this README and the
-`Dockerfile` — a full Laravel skeleton is fetched via Composer, not
-hand-authored.
+This directory is intentionally empty except for this README, the
+`Dockerfile`, and `AGENT_INSTRUCTIONS.md` — a full Laravel skeleton is
+fetched via Composer, not hand-authored.
+
+**Continuing the implementation after bootstrap?** See
+[AGENT_INSTRUCTIONS.md](AGENT_INSTRUCTIONS.md) for the scenario to build
+(Expense Reimbursement) and what to read first.
 
 ## One-time bootstrap
 
