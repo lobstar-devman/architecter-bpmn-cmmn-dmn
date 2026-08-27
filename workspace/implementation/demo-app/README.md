@@ -14,8 +14,13 @@ hand-authored.
 ## One-time bootstrap
 
 ```
-docker compose run --rm demo-app composer create-project laravel/laravel . --prefer-dist
+docker compose run --rm demo-app sh -c "composer create-project laravel/laravel /tmp/laravel --prefer-dist --no-interaction && cp -rn /tmp/laravel/. . && rm -rf /tmp/laravel"
 ```
+
+(`composer create-project` refuses to install into a non-empty directory, and this
+one already has `Dockerfile` and `README.md` in it — so this installs to a scratch
+directory inside the container first, then merges the generated files back with
+`cp -n`, which skips anything that would collide with the two files already here.)
 
 Then add the package as a local path dependency. In the generated
 `composer.json`, add:
