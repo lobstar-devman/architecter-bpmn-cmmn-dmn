@@ -1,4 +1,4 @@
-name: bpm-engine
+name: laravel-bpm-engine
 
 services:
   postgres:
