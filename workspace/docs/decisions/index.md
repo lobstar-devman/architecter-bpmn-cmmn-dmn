@@ -20,6 +20,7 @@ diagrammable source of truth).
 | [ADR-007](adr-007-implementation-self-contained.md) | Implementation is self-contained and relocatable; docs are read via the served site | accepted | 2026-08-25 |
 | [ADR-008](adr-008-dmn-decision-table-scope.md) | DMN scope — single decision table, FIRST hit policy, minimal FEEL unary tests | accepted | 2026-08-31 |
 | [ADR-009](adr-009-no-decision-manager.md) | No Decision Manager — DMN Evaluator resolves, evaluates, and logs directly | accepted | 2026-08-31 |
+| [ADR-010](adr-010-cmmn-case-plan-scope.md) | CMMN scope — single linear case plan, sentry-derived transitions, OR'd triggers | accepted | 2026-08-31 |
 
 ## Template
 
