@@ -21,6 +21,7 @@ diagrammable source of truth).
 | [ADR-008](adr-008-dmn-decision-table-scope.md) | DMN scope — single decision table, FIRST hit policy, minimal FEEL unary tests | accepted | 2026-08-31 |
 | [ADR-009](adr-009-no-decision-manager.md) | No Decision Manager — DMN Evaluator resolves, evaluates, and logs directly | accepted | 2026-08-31 |
 | [ADR-010](adr-010-cmmn-case-plan-scope.md) | CMMN scope — single linear case plan, sentry-derived transitions, OR'd triggers | accepted | 2026-08-31 |
+| [ADR-011](adr-011-bpmn-process-scope.md) | BPMN scope — start/task/end only, unconditional linear sequence flow | accepted | 2026-08-31 |
 
 ## Template
 

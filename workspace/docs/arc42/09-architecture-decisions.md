@@ -18,3 +18,4 @@ Recorded so far:
 - [ADR-008: DMN scope — single decision table, FIRST hit policy, minimal FEEL unary tests](../decisions/adr-008-dmn-decision-table-scope.md)
 - [ADR-009: No Decision Manager — DMN Evaluator resolves, evaluates, and logs directly](../decisions/adr-009-no-decision-manager.md)
 - [ADR-010: CMMN scope — single linear case plan, sentry-derived transitions, OR'd triggers](../decisions/adr-010-cmmn-case-plan-scope.md)
+- [ADR-011: BPMN scope — start/task/end only, unconditional linear sequence flow](../decisions/adr-011-bpmn-process-scope.md)

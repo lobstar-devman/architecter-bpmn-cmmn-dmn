@@ -83,3 +83,4 @@ nav:
       - "ADR-008: DMN Decision Table Scope": decisions/adr-008-dmn-decision-table-scope.md
       - "ADR-009: No Decision Manager": decisions/adr-009-no-decision-manager.md
       - "ADR-010: CMMN Case Plan Scope": decisions/adr-010-cmmn-case-plan-scope.md
+      - "ADR-011: BPMN Process Scope": decisions/adr-011-bpmn-process-scope.md
