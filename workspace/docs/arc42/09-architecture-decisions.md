@@ -15,3 +15,5 @@ Recorded so far:
 - [ADR-005: Role/lane data is exposed via an event, not enforced](../decisions/adr-005-role-context-not-enforced.md)
 - [ADR-006: No built-in MCP server — AI-agent access goes through the business domain](../decisions/adr-006-no-builtin-mcp-server.md)
 - [ADR-007: Implementation is self-contained and relocatable; docs are read via the served site](../decisions/adr-007-implementation-self-contained.md)
+- [ADR-008: DMN scope — single decision table, FIRST hit policy, minimal FEEL unary tests](../decisions/adr-008-dmn-decision-table-scope.md)
+- [ADR-009: No Decision Manager — DMN Evaluator resolves, evaluates, and logs directly](../decisions/adr-009-no-decision-manager.md)

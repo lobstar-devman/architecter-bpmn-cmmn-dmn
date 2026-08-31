@@ -18,6 +18,8 @@ diagrammable source of truth).
 | [ADR-005](adr-005-role-context-not-enforced.md) | Role/lane data is exposed via an event, not enforced | accepted | 2026-08-25 |
 | [ADR-006](adr-006-no-builtin-mcp-server.md) | No built-in MCP server — AI-agent access goes through the business domain | accepted | 2026-08-25 |
 | [ADR-007](adr-007-implementation-self-contained.md) | Implementation is self-contained and relocatable; docs are read via the served site | accepted | 2026-08-25 |
+| [ADR-008](adr-008-dmn-decision-table-scope.md) | DMN scope — single decision table, FIRST hit policy, minimal FEEL unary tests | accepted | 2026-08-31 |
+| [ADR-009](adr-009-no-decision-manager.md) | No Decision Manager — DMN Evaluator resolves, evaluates, and logs directly | accepted | 2026-08-31 |
 
 ## Template
 

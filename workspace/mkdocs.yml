@@ -80,3 +80,5 @@ nav:
       - "ADR-005: Role Context Not Enforced": decisions/adr-005-role-context-not-enforced.md
       - "ADR-006: No Built-in MCP Server": decisions/adr-006-no-builtin-mcp-server.md
       - "ADR-007: Implementation Self-Contained": decisions/adr-007-implementation-self-contained.md
+      - "ADR-008: DMN Decision Table Scope": decisions/adr-008-dmn-decision-table-scope.md
+      - "ADR-009: No Decision Manager": decisions/adr-009-no-decision-manager.md
