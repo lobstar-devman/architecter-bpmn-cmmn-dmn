@@ -25,9 +25,7 @@ BPMN/CMMN.
 `DmnParser`/`DmnEvaluator` support a defined subset, not the full DMN
 1.3 spec:
 
-- A single `<decision>` containing a single `<decisionTable>` per DMN
-  XML document — no decision requirement graph, no decision-to-decision
-  dependencies.
+- Exactly one <decisionTable> per DMN XML document — no decision requirement graph, no decision-to-decision dependencies. DmnParser throws if it finds zero or more than one, rather than silently picking one.
 - Only the `FIRST` hit policy. `DmnEvaluator` throws, naming the
   unsupported policy, if a decision table declares anything else —
   it never silently mis-evaluates a hit policy it doesn't implement.
