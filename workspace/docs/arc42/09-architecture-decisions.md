@@ -19,3 +19,4 @@ Recorded so far:
 - [ADR-009: No Decision Manager — DMN Evaluator resolves, evaluates, and logs directly](../decisions/adr-009-no-decision-manager.md)
 - [ADR-010: CMMN scope — single linear case plan, sentry-derived transitions, OR'd triggers](../decisions/adr-010-cmmn-case-plan-scope.md)
 - [ADR-011: BPMN scope — start/task/end only, unconditional linear sequence flow](../decisions/adr-011-bpmn-process-scope.md)
+- [ADR-012: BPMN vocabulary hashing — computed on demand, flat, BPMN-only](../decisions/adr-012-bpmn-vocabulary-hash.md)

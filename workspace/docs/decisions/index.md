@@ -22,6 +22,7 @@ diagrammable source of truth).
 | [ADR-009](adr-009-no-decision-manager.md) | No Decision Manager — DMN Evaluator resolves, evaluates, and logs directly | accepted | 2026-08-31 |
 | [ADR-010](adr-010-cmmn-case-plan-scope.md) | CMMN scope — single linear case plan, sentry-derived transitions, OR'd triggers | accepted | 2026-08-31 |
 | [ADR-011](adr-011-bpmn-process-scope.md) | BPMN scope — start/task/end only, unconditional linear sequence flow | accepted | 2026-08-31 |
+| [ADR-012](adr-012-bpmn-vocabulary-hash.md) | BPMN vocabulary hashing — computed on demand, flat, BPMN-only | accepted | 2026-09-04 |
 
 ## Template
 
